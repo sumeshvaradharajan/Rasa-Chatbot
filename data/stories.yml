@@ -1,0 +1,65 @@
+version: "3.1"
+
+stories:
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: all operations
+  steps:
+  - intent: problem_statement
+  - action: utter_problem_statement
+  - intent: operator
+  - action: utter_input_operand1
+  - intent: operand1
+  - action: utter_input_operand2
+  - intent: operand2
+  - action: action_math_operation 
+
+- story: samples
+  steps:
+  - intent: sample_cases
+  - action: utter_sample_cases
+
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - intent: affirm
+  - action: utter_happy
+
+- story: Add numbers
+  steps:
+  - intent: add_numbers
+  - action: action_numbers
+
+- story: SUB numbers
+  steps:
+  - intent: sub_numbers
+  - action: action_numbers
+
+- story: MULT numbers
+  steps:
+  - intent: mult_numbers
+  - action: action_numbers
+
+- story: DIV numbers
+  steps:
+  - intent: div_numbers
+  - action: action_numbers
+
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - intent: deny
+  - action: utter_goodbye
